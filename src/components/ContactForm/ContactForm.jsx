@@ -7,7 +7,6 @@ import {
   BtnAdd,
 } from './ContactForm.styled';
 import { nanoid } from 'nanoid';
-// import { number } from 'prop-types';
 
 export default class ContactForm extends Component {
   state = {

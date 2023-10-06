@@ -28,21 +28,19 @@ export default class App extends Component {
     });
   };
   onDeleteContact = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-    }));
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.filter(
+          contact => contact.id !== contactId
+        ),
+      };
+    });
   };
   onInputContact = event => {
     const searchContact = event.target.value.toLowerCase();
     this.setState({ filter: searchContact });
   };
 
-  // findContact = () => {
-  //   const filterArr = this.state.contacts.filter(({ name }) =>
-  //     name.toLowerCase().includes(this.state.filter)
-  //   );
-  //   return filterArr;
-  // };
   findContact = () => {
     return this.state.contacts.filter(({ name }) =>
       name.toLowerCase().includes(this.state.filter)
